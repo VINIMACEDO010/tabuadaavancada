@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada Avançada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        input[type="number"] {
+            width: 50px;
+            padding: 5px;
+            font-size: 16px;
+        }
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada Avançada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="number"], input[type="checkbox"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #dresultado {
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
+    <script language="JavaScript">
+        function tabuadaAvancada() {
+            let num = parseInt(document.getElementById('inum').value);
+            let maxNum = parseInt(document.getElementById('maxNum').value);
+            let showAll = document.getElementById('showAll').checked;
+            
+            let resultado = "";
+
+            for (let i = 1; i <= num; i++) {
+                for (let j = 1; j <= maxNum; j++) {
+                    resultado += i + " x " + j + " = " + (i * j) + "<br>";
+                }
+                if (showAll) {
+                    resultado += "<br>";
+                }
+            }
+
+            document.getElementById('dresultado').innerHTML = resultado;
+        }
+    </script>
+</head>
+<body>
+    <h1>Tabuada Avançada</h1>
+    <div class="container">
+        <label for="inum">Número: </label>
+        <input type="number" id="inum" value="2" step="1">
+        <br>
+        <label for="maxNum">Até que número: </label>
+        <input type="number" id="maxNum" value="10" step="1">
+        <br>
+        <label for="showAll">Mostrar todas as tabuadas: </label>
+        <input type="checkbox" id="showAll">
+        <br>
+        <button onclick="tabuadaAvancada()">
+            Exibir
+        </button>
+        <br>
+        <div id="dresultado"></div>
+    </div>
+</body>
+</html>
